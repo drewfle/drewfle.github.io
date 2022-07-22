@@ -1,0 +1,5 @@
+baseURL = "https://drewfle.github.io/"
+languageCode = "en-us"
+title = "Drewfle Blog"
+theme = "drewfle-blog"
+

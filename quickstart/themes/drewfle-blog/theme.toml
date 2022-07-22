@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "drewfle-blog"
+license = "MIT"
+licenselink = ""
+description = "A boilerplate starter theme using Tailwind CSS."
+homepage = "https://github.com/drewfle/drewfle.github.io"
+tags = ["Hugo", "Tailwind CSS", "theme"]
+features = []
+min_version = "0.1"
+
+[author]
+  name = "Andrew Liu"
+  homepage = "https://github.com/drewfle"
