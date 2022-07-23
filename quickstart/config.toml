@@ -3,3 +3,6 @@ languageCode = "en-us"
 title = "Drewfle Blog"
 theme = "drewfle-blog"
 
+[build]
+  writeStats = true
+
