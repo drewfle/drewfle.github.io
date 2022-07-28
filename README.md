@@ -35,6 +35,15 @@ View the page at [/404.html](http://localhost:1313/404.html).
 
 > Hugo server doesn't serve the custom 404 page. That's up to the configurtion of the actual web server or service. See [Automatic Loading](https://gohugo.io/templates/404/#automatic-loading)
 
+### Render a raw post
+
+```md
+---
+...
+layout: 'raw'
+---
+```
+
 ### Embedding raw html
 
 In a md file:
@@ -46,3 +55,5 @@ In a md file:
 ```
 
 The `rawhtml` is defined in `themes/drewfle-blog/layouts/shortcodes/rawhtml.html`
+
+Caveat: A CSS class in rawhtml will be global when posts are rendered in the same screen. 

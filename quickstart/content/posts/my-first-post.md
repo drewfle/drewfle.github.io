@@ -9,3 +9,8 @@ hii
 ```js
 const huge = 1
 ```
+
+
+{{< rawhtml >}}
+<p class="foo">cool</p>
+{{< /rawhtml >}}

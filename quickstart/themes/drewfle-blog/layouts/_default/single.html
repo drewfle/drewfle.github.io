@@ -1,6 +1,10 @@
 {{ define "main" }}
-<article class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg">
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
-</article>
+    {{ if (eq .Params.layout "raw") }}
+        {{ .Content }}
+    {{ else }}
+        <article class="px-6 mx-auto mb-16 prose text-gray-700 justify-self-center sm:px-4 md:px-0 lg:prose-lg">
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </article>
+    {{ end }}
 {{ end }}
