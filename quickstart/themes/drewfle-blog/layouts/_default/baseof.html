@@ -3,12 +3,12 @@
 {{ partial "head.html" . }}
 
 <body class="flex flex-col min-h-screen">
-    {{- partial "dev/dev-tools.html" . -}}
-    {{- partial "header.html" . -}}
+    {{ partial "dev/dev-tools.html" . }}
+    {{ partial "header.html" . }}
     <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
-        {{- block "main" . }}{{- end }}
+        {{ block "main" . }}{{ end }}
     </main>
-    {{- partial "footer.html" . -}}
+    {{ partial "footer.html" . }}
 </body>
 
 </html>

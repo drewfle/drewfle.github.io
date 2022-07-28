@@ -2,11 +2,7 @@ const themeDir = __dirname + "/../../";
 
 const purgecss = require("@fullhuman/postcss-purgecss")({
   // see https://gohugo.io/hugo-pipes/postprocess/#css-purging-with-postcss
-  content: [
-    "./hugo_stats.json",
-    themeDir + "/hugo_stats.json",
-    "exampleSite/hugo_stats.json",
-  ],
+  content: ["./hugo_stats.json", themeDir + "/hugo_stats.json"],
   safelist: [/type/],
   defaultExtractor: (content) => {
     let els = JSON.parse(content).htmlElements;
