@@ -6,3 +6,5 @@ theme = "drewfle-blog"
 [build]
   writeStats = true
 
+[taxonomies]
+  tag = 'tags'
