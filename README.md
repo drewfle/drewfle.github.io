@@ -1,6 +1,6 @@
 # Drewfle Blog
 
-Install Hugo to user bin:
+Install Hugo in user bin:
 
 ```sh
 # $ sudo apt remove hugo

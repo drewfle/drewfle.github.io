@@ -1,16 +1,19 @@
 {{ define "main" }}
-<article class="text-center text-gray-700">
-    <h1 class="font-serif font-extralight text-5xl welcome-headline">{{ .Title }}</h1>
-    {{ .Content }}
-</article>
-<div>
-    {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
-	  {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
-          <div class="tagbutton">
-		<a href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
-		<sup>{{$cnt}}</sup>
-          </div>
-	  {{end}}
-	{{end}}
-</div>
+    <header class="w-full">
+        <img src="homepage/img/2016-11-29-waterloo-bridge.jpg" class="homepage header__img">
+    </header>
+    <article class="text-center text-gray-700">
+        <h1 class="font-serif font-extralight text-5xl welcome-headline">{{ .Title }}</h1>
+        {{ .Content }}
+    </article>
+    <div>
+        {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+    	    {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                <div class="tagbutton">
+    		        <a href={{ .RelPermalink }} title="All pages with tag <i>{{$name}}</i>">{{$name}}</a>
+    		        <sup>{{$cnt}}</sup>
+                </div>
+    	    {{end}}
+    	{{end}}
+    </div>
 {{ end }}

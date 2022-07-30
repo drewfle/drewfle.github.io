@@ -1,15 +1,19 @@
-/* TailwindCSS base styles */
-/* see https://tailwindcss.com/docs/functions-and-directives#tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
 
-/* Site Specific */
-/* put site specific css styles here using the @layer directive */
-/* see https://tailwindcss.com/docs/functions-and-directives#layer */
+/* homepage */
 @layer components {
-  .welcome-headline {
+  /* .welcome-headline {
     @apply text-blue-700;
+  } */
+  .homepage {
+    & .header__img {
+      @apply object-cover;
+      @apply object-center;
+      @apply w-full;
+      @apply h-96;
+    }
   }
 }

@@ -1,3 +1,4 @@
+// import postcssNesting from "postcss-nesting";
 const themeDir = __dirname + "/../../";
 
 const purgecss = require("@fullhuman/postcss-purgecss")({
@@ -16,6 +17,7 @@ module.exports = {
     require("autoprefixer")({
       path: [themeDir],
     }),
+    require("postcss-nesting")(),
     // TODO: add cssnano https://tailwindcss.com/docs/optimizing-for-production
     ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecss] : []),
   ],

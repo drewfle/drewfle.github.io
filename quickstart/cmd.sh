@@ -2,7 +2,8 @@
 
 if [[ $1 = "start" ]]
 then
-  hugo server --disableFastRender -D 
+  hugo server -D 
+  # hugo server --disableFastRender -D 
 elif [[ $1 = "build:prod" ]]
 then
   hugo
