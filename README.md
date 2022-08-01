@@ -57,3 +57,39 @@ In a md file:
 The `rawhtml` is defined in `themes/drewfle-blog/layouts/shortcodes/rawhtml.html`
 
 Caveat: A CSS class in rawhtml will be global when posts are rendered in the same screen.
+
+## Notes
+
+### Template
+
+Theme:
+
+- `layouts/`
+  - `partials/`
+    - `dev/`
+      - `container-indicator.html`
+      - `dev-tools.html`
+      - `grid-indicator.html`
+      - `parameters.html`
+      - `size-indicator.html`
+    - `footer.html`
+    - `head.html`
+    - `homepage/`
+      - `header.html`
+  - `404.html`
+  - `index.html`
+
+
+  ├── 404.html
+├── _default
+│   ├── _bak_baseof.html
+│   ├── baseof.html
+│   ├── list.html
+│   └── single.html
+├── about
+│   └── single.html
+├── index.html
+
+└── shortcodes
+    └── rawhtml.html
+
