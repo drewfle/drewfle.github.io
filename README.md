@@ -65,6 +65,16 @@ Caveat: A CSS class in rawhtml will be global when posts are rendered in the sam
 Theme:
 
 - `layouts/`
+  - `_default`
+    - `baseof.html`:
+      - For homepage and all pages
+    - `list.html`
+      - For `/posts`
+    - `single.html`
+      - For all pages
+  - `about`
+    - `single.html`
+      - Overrides `_default/single.html`
   - `partials/`
     - `dev/`
       - `container-indicator.html`
@@ -72,24 +82,15 @@ Theme:
       - `grid-indicator.html`
       - `parameters.html`
       - `size-indicator.html`
-    - `footer.html`
+    - `[unused] footer.html`
+      - Fragment for `<footer>`
     - `head.html`
+      - Fragment for `<head>`
+      - Used in `_default/baseof.html`
     - `homepage/`
-      - `header.html`
+      - `[unused] header.html`
+        - Fragment for `<header>`
+    - `shortcodes`
+      - `rawhtml.html`
   - `404.html`
   - `index.html`
-
-
-  ├── 404.html
-├── _default
-│   ├── _bak_baseof.html
-│   ├── baseof.html
-│   ├── list.html
-│   └── single.html
-├── about
-│   └── single.html
-├── index.html
-
-└── shortcodes
-    └── rawhtml.html
-
