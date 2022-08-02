@@ -9,7 +9,7 @@
     @apply text-blue-700;
   } */
   .homepage {
-    & .header__img {
+    &.header__img {
       @apply object-cover;
       @apply object-center;
       @apply w-full;

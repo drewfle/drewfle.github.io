@@ -67,11 +67,11 @@ Theme:
 - `layouts/`
   - `_default`
     - `baseof.html`:
-      - For homepage and all pages
+      - Top level layout for homepage and all pages
     - `list.html`
-      - For `/posts`
+      - Page layout for `/posts` (can be top level)
     - `single.html`
-      - For all pages
+      - Page layout for all pages (can be top level)
   - `about`
     - `single.html`
       - Overrides `_default/single.html`
@@ -87,6 +87,8 @@ Theme:
     - `head.html`
       - Fragment for `<head>`
       - Used in `_default/baseof.html`
+    - `[broken]langs.html`
+      - Fragment for listing langs
     - `homepage/`
       - `[unused] header.html`
         - Fragment for `<header>`
@@ -94,3 +96,4 @@ Theme:
       - `rawhtml.html`
   - `404.html`
   - `index.html`
+    - Page layout for homepage (can be top level)

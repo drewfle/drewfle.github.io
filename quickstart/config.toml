@@ -2,9 +2,18 @@ baseURL = "https://drewfle.github.io/"
 languageCode = "en-us"
 title = "Drewfle Blog"
 theme = "drewfle-blog"
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    weight = 1
+  [languages.cn]
+    title = 'Cool'
+    weight = 2
 
 [build]
   writeStats = true
 
 [taxonomies]
   tag = 'tags'
+
