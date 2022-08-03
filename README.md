@@ -58,6 +58,11 @@ The `rawhtml` is defined in `themes/drewfle-blog/layouts/shortcodes/rawhtml.html
 
 Caveat: A CSS class in rawhtml will be global when posts are rendered in the same screen.
 
+## Multilingual
+
+- `/post` lists `content/en/posts`
+- `/cn/post` lists `content/cn/posts`
+
 ## Notes
 
 ### Template

@@ -1,15 +1,27 @@
 baseURL = "https://drewfle.github.io/"
 languageCode = "en-us"
-title = "Drewfle Blog"
 theme = "drewfle-blog"
 defaultContentLanguage = 'en'
 
 [languages]
   [languages.en]
+    contentDir = "content/en"
+    title = "Drewfle Blog"
     weight = 1
+    # [languages.en.params]
+    #   linkedin = 'https://linkedin.com/whoever'
   [languages.cn]
+    contentDir = "content/cn"
     title = 'Cool'
     weight = 2
+    # [languages.cn.params]
+    #   linkedin = 'https://linkedin.com/cn/whoever'
+    [languages.cn.params.navigation]
+        help = 'Aide'
+
+[params]
+  [params.navigation]
+    help = 'Help'
 
 [build]
   writeStats = true
