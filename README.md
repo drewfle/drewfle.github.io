@@ -39,9 +39,16 @@ View the page at [/404.html](http://localhost:1313/404.html).
 
 ```md
 ---
+layout: 'raw'
 ...
+```
 
-## layout: 'raw'
+### Static File path
+
+**Path should start with `/`, otherwise the static file won't be resolved in multilingual pages**
+
+```html
+<img src="/<path-in-static>/foo.jpg">
 ```
 
 ### Embedding raw html
