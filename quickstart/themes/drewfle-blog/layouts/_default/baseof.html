@@ -1,22 +1,28 @@
 <!DOCTYPE html>
-<html lang='{{ .Site.LanguageCode }}'>
-{{ partial "head.html" . }}
+<html lang="{{ .Site.LanguageCode }}">
+  {{ partial "head.html" . }}
 
-{{ if (eq .Params.layout "raw") }}
+
+  <!--
+    "main" is defined in default layouts and gets rendered as below:
+        {{ block "main" . }}{{ end }}  
+  -->
+
+  {{ if (eq .Params.layout "raw") }}
     <body>
-        {{ partial "dev/dev-tools.html" . }}
-        <main>
-            {{ block "main" . }}{{ end }}
-        </main>
+      {{ partial "dev/dev-tools.html" . }}
+      <main>
+        {{ block "main" . }}{{ end }}
+      </main>
     </body>
-{{ else }}
+  {{ else }}
     <body class="flex flex-col min-h-screen">
-        {{ partial "dev/dev-tools.html" . }}
-        {{/*  {{ partial "homepage/header.html" . }}  */}}
-        <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
-            {{ block "main" . }}{{ end }}
-        </main>
+      {{ partial "dev/dev-tools.html" . }}
+      {{/* {{ partial "homepage/header.html" . }} */}}
+      <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
+        {{ block "main" . }}{{ end }}
+      </main>
     </body>
-{{ end }}
+  {{ end }}
 
 </html>

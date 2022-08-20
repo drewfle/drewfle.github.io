@@ -1,10 +1,9 @@
 ---
 name: Report an issue
 about: Please describe the issue as precisely as possible.
-title: ''
-labels: ''
-assignees: ''
-
+title: ""
+labels: ""
+assignees: ""
 ---
 
 Please provide all necessary informations to reproduce this issue.
