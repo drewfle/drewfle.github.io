@@ -1,4 +1,4 @@
-# Drefle Blog Theme
+# Drewfle Blog Theme
 
 ## Setup
 
@@ -7,12 +7,10 @@
 Install below according to [Hugo Docs](https://gohugo.io/hugo-pipes/postcss/):
 
 ```sh
-npm i -g postcss-cli
-npm i -g autoprefixer
+npm i -g postcss-cli autoprefixer
 ```
 
 Run `npm i`
-
 
 ## Good Stuff from [dirkolbrich/hugo-tailwindcss-starter-theme](https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme)
 
