@@ -1,0 +1,39 @@
+---
+title: "Test Raw HTML"
+date: 2022-07-20T23:38:58-04:00
+draft: true
+layout: "raw"
+---
+
+<!-- Works as expected -->
+<p>hi</p>
+
+<!-- Only renders as plain text as is including asterisks -->
+**hi**
+
+<!-- Works. Used up all screen width. -->
+{{< figure
+  src="/homepage/img/2016-11-29-waterloo-bridge.jpg"
+  class="h-48 overflow-hidden"
+>}}
+
+
+<!-- Partially works. rounded-lg isn't applied. -->
+{{< figure
+  src="/homepage/img/2016-11-29-waterloo-bridge.jpg"
+  class="h-48 w-96 rounded-lg"
+>}}
+
+
+<!-- Works as expected -->
+<img
+  src="/homepage/img/2016-11-29-waterloo-bridge.jpg"
+  class="h-48 w-96 rounded-lg"
+/>
+
+<!-- Below wont be omitted -->
+<h1 class="font-serif font-extralight text-5xl">{{ .Title }}</h1>
+
+<script>
+  console.log("cool");
+</script>

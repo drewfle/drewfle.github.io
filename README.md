@@ -35,11 +35,13 @@ View the page at [/404.html](http://localhost:1313/404.html).
 
 > Hugo server doesn't serve the custom 404 page. That's up to the configurtion of the actual web server or service. See [Automatic Loading](https://gohugo.io/templates/404/#automatic-loading)
 
-### Render a raw post
+### Rendering without default layout
+
+In the front matter:
 
 ```md
 ---
-layout: 'raw'
+layout: "raw"
 ...
 ```
 
@@ -48,12 +50,18 @@ layout: 'raw'
 **Path should start with `/`, otherwise the static file won't be resolved in multilingual pages**
 
 ```html
-<img src="/<path-in-static>/foo.jpg">
+<img src="/<path-in-static>/foo.jpg" />
 ```
 
-### Embedding raw html
+### Rendering raw html
 
-In a md file:
+#### In `.html` files
+
+Both plain raw html (without `rawhtml` shortcode) and `rawhtml` shortcode (when front matter is provided) work out of box.
+
+#### In `.md` files
+
+In a md file, use `rawhtml` shortcode:
 
 ```html
 {{< rawhtml >}}

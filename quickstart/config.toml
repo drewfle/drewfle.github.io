@@ -28,4 +28,8 @@ defaultContentLanguage = 'en'
 
 [taxonomies]
   tag = 'tags'
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
