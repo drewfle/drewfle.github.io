@@ -17,3 +17,18 @@
     }
   }
 }
+.foo {
+  &_bar {
+    color: red;
+  }
+}
+.layouts {
+  &_default {
+    &_markup {
+      /* layouts__default__markup_render-image */
+      &_render-image {
+        padding: 100px;
+      }
+    }
+  }
+}

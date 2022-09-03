@@ -33,4 +33,15 @@
       integrity="{{ $styles.Data.Integrity }}"
     />
   {{ end }}
+
+  {{ $js := resources.Get "js/main.js" | js.Build }}
+  {{ if .Site.IsServer }}
+    {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
+    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+    {{ $js := $js | resources.ExecuteAsTemplate (printf "js/main.dev.%s.js" $random) $random }}
+    <script type="text/javascript" src="{{ $js.Permalink }}"></script>
+  {{ else }}
+    {{ $js := $js | resources.Minify | resources.Fingerprint "sha512" }}
+    <script type="text/javascript" src="{{ $js.Permalink }}"></script>
+  {{ end }}
 </head>

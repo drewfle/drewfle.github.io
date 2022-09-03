@@ -12,12 +12,20 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
 });
 
 module.exports = {
+  // plugins: {
+  //   "postcss-import": {},
+  //   "tailwindcss/nesting": require("postcss-nesting")(),
+  //   tailwindcss: {},
+  //   autoprefixer: {
+  //     path: [themeDir],
+  //   },
+  // },
   plugins: [
+    require("postcss-nesting")(),
     require("tailwindcss")(themeDir + "assets/css/tailwind.config.js"),
     require("autoprefixer")({
       path: [themeDir],
     }),
-    require("postcss-nesting")(),
     // TODO: add cssnano https://tailwindcss.com/docs/optimizing-for-production
     ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecss] : []),
   ],

@@ -1,0 +1,16 @@
+<p class="layouts__default__markup_render-image">
+  <script>
+    var me = document.currentScript;
+
+    console.log("cooool", me, me.nextSibling);
+  </script>
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    {{ with .Title }}title="{{ . }}"{{ end }}
+  />
+  x
+  {{ .Destination }}
+  {{ .Text }}
+  {{ .Page }}
+</p>

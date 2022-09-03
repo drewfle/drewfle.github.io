@@ -1,8 +1,7 @@
 ---
-title: "Test Raw Markdown"
+title: "Test Markdown"
 date: 2022-07-20T23:38:58-04:00
 draft: true
-layout: "raw"
 ---
 
 <!-- Markdown ************************************************************* -->
@@ -18,8 +17,6 @@ hi
 ```html
 <div>Snippet</div>
 ```
-
-<!-- Uses full screen width as expected -->
 
 ![Waterloo](/homepage/img/2016-11-29-waterloo-bridge.jpg)
 
@@ -42,8 +39,6 @@ Rendered as:
 </script>
 
 <!-- Shortcode ************************************************************ -->
-
-<!-- Works as expected and uses full screen width -->
 
 {{< figure
 src="/homepage/img/2016-11-29-waterloo-bridge.jpg"
