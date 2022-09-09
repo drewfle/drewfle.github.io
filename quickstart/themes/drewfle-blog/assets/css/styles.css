@@ -20,7 +20,12 @@
 .foo {
   &_bar {
     color: red;
+    color: blue;
   }
+}
+.test {
+  background: pink;
+  background: red;
 }
 .layouts {
   &_default {

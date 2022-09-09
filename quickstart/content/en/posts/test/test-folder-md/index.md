@@ -6,11 +6,21 @@ draft: true
 
 Test
 
-<!-- the image only renders in the post. For the preview in posts, the src path will be invalid.  -->
+<!-- Shows in both the post and post list  -->
+
+cool
+![Cool](/posts/test/test-folder-md/test-folder-md.jpg)
 
 {{< figure
-src="test-folder-md.jpg"
+src="/posts/test/test-folder-md/test-folder-md.jpg"
 class="h-48 overflow-hidden"
     >}}
 
-![Cool](test-folder-md.jpg)
+<!-- Only displays in the post. Won't show in the post list -->
+
+<!-- ![Cool](test-folder-md.jpg) -->
+
+<!-- {{< figure
+src="test-folder-md.jpg"
+class="h-48 overflow-hidden"
+    >}} -->
