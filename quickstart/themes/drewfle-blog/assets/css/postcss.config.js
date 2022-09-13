@@ -1,4 +1,3 @@
-// import postcssNesting from "postcss-nesting";
 const themeDir = __dirname + "/../../";
 
 const purgecss = require("@fullhuman/postcss-purgecss")({
@@ -11,22 +10,21 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
   },
 });
 
-module.exports = {
-  // plugins: {
-  //   "postcss-import": {},
-  //   "tailwindcss/nesting": require("postcss-nesting")(),
-  //   tailwindcss: {},
-  //   autoprefixer: {
-  //     path: [themeDir],
-  //   },
-  // },
+const postcssConfig = {
   plugins: [
+    // TODO: Support SASS CSS Nesting
+    // by adding postcss-nested
+    // Support CSS Nesting spec
     require("postcss-nesting")(),
     require("tailwindcss")(themeDir + "assets/css/tailwind.config.js"),
     require("autoprefixer")({
       path: [themeDir],
     }),
-    // TODO: add cssnano https://tailwindcss.com/docs/optimizing-for-production
-    ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecss] : []),
   ],
 };
+
+if (process.env.HUGO_ENVIRONMENT === "production") {
+  postcssConfig.plugins.push(purgecss);
+}
+
+module.exports = postcssConfig;

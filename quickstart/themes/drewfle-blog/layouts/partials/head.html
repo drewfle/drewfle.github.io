@@ -21,10 +21,6 @@
 
   {{ $styles := resources.Get "css/styles.css" | resources.PostCSS (dict "config" "./assets/css/postcss.config.js") }}
   {{ if .Site.IsServer }}
-    {{/* {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
-    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
-    {{ $styles := $styles | resources.ExecuteAsTemplate (printf "css/styles.dev.%s.css" $random) $random }}
-    */}}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
   {{ else }}
     {{ $styles := $styles | resources.Minify | resources.Fingerprint "sha512" | resources.PostProcess }}
@@ -37,15 +33,9 @@
 
   {{ $js := resources.Get "js/main.js" | js.Build }}
   {{ if .Site.IsServer }}
-    {{/* {{ $seed := "weqklrjfmnk213409ufasdfhnlk3j4bladsfsl" }}
-    {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
-    {{ $js := $js | resources.ExecuteAsTemplate (printf "js/main.dev.%s.js" $random) $random }}
-    */}}
     <script type="text/javascript" src="{{ $js.Permalink }}"></script>
   {{ else }}
-    {{/* {{ $js := $js | resources.Minify | resources.Fingerprint "sha512" }}
-    */}}
-    {{ $js := $js | minify | fingerprint }}
+    {{ $js := $js | resources.Minify | resources.Fingerprint "sha512" }}
     <script type="text/javascript" src="{{ $js.Permalink }}"></script>
   {{ end }}
 </head>

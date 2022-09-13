@@ -2,23 +2,21 @@
 <html lang="{{ .Site.LanguageCode }}">
   {{ partial "head.html" . }}
 
-
-  <!--
-    "main" is defined in default layouts and gets rendered as below:
-        {{ block "main" . }}{{ end }}  
-  -->
-
   {{ if (eq .Params.layout "raw") }}
     <body>
       {{ partial "dev/dev-tools.html" . }}
       <main>
+        <!--
+          "main" is defined in layouts and rendered in here. 
+          For example, in single.html
+        -->
         {{ block "main" . }}{{ end }}
       </main>
     </body>
   {{ else }}
+    /home/drewfle/dev/drewfle-github/drewfle.github.io/quickstart/themes/drewfle-blog/.github
     <body class="flex flex-col min-h-screen">
       {{ partial "dev/dev-tools.html" . }}
-      {{/* {{ partial "homepage/header.html" . }} */}}
       <main class="flex-1 mx-4 md:mx-12 lg:mx-24 mt-4 sm:mt-16">
         {{ block "main" . }}{{ end }}
       </main>
