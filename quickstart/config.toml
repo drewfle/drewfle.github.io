@@ -28,9 +28,6 @@ defaultContentLanguage = 'en'
 
 [taxonomies]
   tag = 'tags'
-# [markup]
-#   [markup.goldmark]
-#     [markup.goldmark.renderer]
-#       unsafe = true
+
 [markup.goldmark.renderer]
   unsafe = true

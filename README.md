@@ -55,13 +55,20 @@ layout: "raw"
 
 ### Rendering raw html
 
-#### In `.html` files
+Rendering raw html is enabled from the Markdown renderer:
 
-Both plain raw html (without `rawhtml` shortcode) and `rawhtml` shortcode (when front matter is provided) work out of box.
+```toml
+[markup.goldmark.renderer]
+  unsafe = true
+```
 
-#### In `.md` files
+To supress the warning on raw html, add below on the top of Markdown file:
 
-In a md file, use `rawhtml` shortcode:
+```md
+<!-- markdownlint-disable MD033 -->
+```
+
+Alternatively, use `rawhtml` shortcode:
 
 ```html
 {{< rawhtml >}}
