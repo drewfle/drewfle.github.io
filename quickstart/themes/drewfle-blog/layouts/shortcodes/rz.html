@@ -1,0 +1,10 @@
+{{/* *
+  Usage:
+  ![]({{< rz "test-folder-md.jpg" 200x
+>}})
+*/}}
+{{ $img := .Page.Resources.GetMatch (printf "*%s" (.Get 0)) }}
+
+{{ $size := .Get 1 }}
+{{ $img = $img.Resize (printf "%s webq q90" $size) }}
+{{ $img.RelPermalink }}

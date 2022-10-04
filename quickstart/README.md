@@ -7,9 +7,13 @@ Install Hugo in user bin:
 cd ~; \
 mkdir bin; \
 cd bin; \
-wget https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_0.101.0_Linux-64bit.tar.gz; \
-tar -xvf hugo_0.101.0_Linux-64bit.tar.gz; \
-rm hugo_0.101.0_Linux-64bit.tar.gz
+HUGO_VER=0.104.2; \
+HUGO_FILENAME="hugo_extended_${HUGO_VER}_Linux-64bit.tar.gz"; \
+HUGO_URL="https://github.com/gohugoio/hugo/releases/download/v${HUGO_VER}/${HUGO_FILENAME}"
+wget $HUGO_URL; \
+tar -xvf $HUGO_FILENAME; \
+rm $HUGO_FILENAME; \
+hugo version
 # now pull tooling repo and make sure user path is added
 ```
 
@@ -80,6 +84,10 @@ The `rawhtml` is defined in `themes/drewfle-blog/layouts/shortcodes/rawhtml.html
 
 Caveat: A CSS class in rawhtml will be global when posts are rendered in the same screen.
 
+## Rendering Images
+
+TBD
+
 ## Multilingual
 
 - `/post` lists `content/en/posts`
@@ -124,3 +132,49 @@ Theme:
   - `404.html`
   - `index.html`
     - Page layout for homepage (can be top level)
+
+## Snippets
+
+```hugo
+{{ $keys := slice "foo" "bar" }}
+{{ $bp := dict }}
+{{ range $i := (slice 0 1) }}
+  {{ $key := (index $keys $i) }}
+  {{ $bp = merge $bp (dict $key $i) }}
+{{ end }}
+```
+
+```hugo
+{{ $posts := .Pages }}
+{{ $nposts := len $posts }}
+{{ $nposts := sub $nposts 9 }}
+<h1>{{ $nposts }}</h1>
+{{ range first 999 (after 9 .Pages.ByLastmod.Reverse) }}
+	<p>{{ .Title }}</p>
+{{ end }}
+```
+
+```hugo
+{{ $option := dict }}
+  {{ range $key := $bp_keys }}
+  {{ $val := printf "%sx webp q90" (index $bp $key) }}
+  {{ $option = merge $option (dict $key $val) }}
+{{ end }}
+```
+
+```hugo
+{{ $chars := dict
+    "b" "2"
+    "a" "1"
+  }}
+{{ range $char := $chars }}
+  {{ $bp_num }}
+  {{ /* ite alpha order */ }}
+  {{ /* a */ }}
+  {{ /* b */ }}
+{{ end }}
+```
+
+## Links
+
+- [Hugo Slices and Dict](https://www.thenewdynamic.com/article/hugo-data/manipulation-slices-and-maps/)

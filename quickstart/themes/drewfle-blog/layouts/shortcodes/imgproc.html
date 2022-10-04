@@ -1,0 +1,29 @@
+{{/* *
+  Usage:
+  {{< imgproc src="test-folder-md.jpg" size="400x" class="cool yea"
+>}}
+*/}}
+{{ $img := .Page.Resources.GetMatch (printf "*%s" (.Get 0)) }}
+{{ $options := .Get 1 }}
+{{ $command := .Get 2 }}
+
+{{/*  {{ if not $option }}
+{{ $option = }}
+{{ end }}
+{{ if not $command }}
+{{ end }}  */}}
+
+{{ $option = (printf "%s webq q90" $option) }}
+
+{{ if eq $command "Fit" }}
+  {{ $img = $img.Fit $options }}
+{{ else if eq $command "Resize" }}
+  {{ $img = $img.Resize $options }}
+{{ else if eq $command "Fill" }}
+  {{ $img = $img.Fill $options }}
+{{ else if eq $command "Crop" }}
+  {{ $img = $img.Crop $options }}
+{{ end }}
+
+
+{{ $img.RelPermalink }}

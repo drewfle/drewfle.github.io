@@ -1,0 +1,7 @@
+{{/* *
+  Usage:
+  ![]({{< relper "test-folder-md.jpg"
+>}})
+*/}}
+{{ $resource := .Page.Resources.GetMatch (printf "*%s" (.Get 0)) }}
+{{ $resource.RelPermalink }}
