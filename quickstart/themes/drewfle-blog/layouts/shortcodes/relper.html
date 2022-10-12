@@ -1,7 +1,6 @@
-{{/* *
-  Usage:
-  ![]({{< relper "test-folder-md.jpg"
->}})
-*/}}
+{{/* Relative Permalink */}}
+{{/* Usage: */}}
+{{/* ![]({{< relper "test-folder-md.jpg" */}}
+
 {{ $resource := .Page.Resources.GetMatch (printf "*%s" (.Get 0)) }}
 {{ $resource.RelPermalink }}

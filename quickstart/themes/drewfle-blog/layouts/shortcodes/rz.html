@@ -1,10 +1,30 @@
-{{/* *
-  Usage:
-  ![]({{< rz "test-folder-md.jpg" 200x
->}})
-*/}}
+{{/* Resize Image */}}
+{{/* Usage: */}}
+{{/* <img src="{{< rz "test-folder-md.jpg" 200x >}}" */}}
+{{/* <img src="{{< rz "test-folder-md.jpg" "lg" >}}" */}}
 {{ $img := .Page.Resources.GetMatch (printf "*%s" (.Get 0)) }}
 
+{{ $sm := "sm" }}
+{{ $md := "md" }}
+{{ $lg := "lg" }}
+{{ $xl := "xl" }}
+{{ $xxl := "xxl" }}
+
+{{ $bps := dict
+  $sm "639x"
+  $md "767x"
+  $lg "1023x"
+  $xl "1279x"
+  $xxl "1535x"
+}}
+
+{{ $bp_keys := slice $sm $md $lg $xl $xxl }}
+
 {{ $size := .Get 1 }}
+{{ if in $bp_keys $size }}
+  {{ $size = (index $bps $size) }}
+{{ end }}
+
 {{ $img = $img.Resize (printf "%s webq q90" $size) }}
+
 {{ $img.RelPermalink }}

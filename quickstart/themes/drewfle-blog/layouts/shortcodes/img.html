@@ -1,5 +1,5 @@
-{{ $src := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
-{{ $alt := .PlainText | safeHTML }}
+{{ $src := .Page.Resources.GetMatch (printf "*%s" (.Get 0 | safeURL)) }}
+{{ $alt := .Get 1 | safeHTML }}
 
 {{ if $src }}
   {{/* Tailwind Max-width Break Points */}}

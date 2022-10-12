@@ -10,3 +10,7 @@ Test
 
 cool
 ![Cool](test-folder-md.jpg)
+
+{{< rz "test-folder-md.jpg" "lg">}}
+
+{{< img "test-folder-md.jpg" "alt">}}
